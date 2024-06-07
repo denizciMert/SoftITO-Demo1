@@ -6,12 +6,13 @@
         public Member(
             string firstName, 
             string lastName, 
+            bool gender,
             string contactEmail, 
             string contactNumber, 
             DateTime dateOfBirth,
             Nation nation,
             DateTime? joinDate = null
-            ) : base(firstName, lastName, contactEmail, contactNumber, dateOfBirth)
+            ) : base(firstName, lastName, gender, contactEmail, contactNumber, dateOfBirth)
         {
             //Null Kontrolü
             ModelValidations.AgeValidator.Check(dateOfBirth);

@@ -10,6 +10,7 @@ namespace SoftITO_Demo1.Models
         public Person(
             string firstName,
             string lastName,
+            bool gender,
             string contactEmail,
             string contactNumber,
             DateTime dateOfBirth
@@ -36,6 +37,7 @@ namespace SoftITO_Demo1.Models
             //Veri Atamaları
             FirstName = firstName;
             LastName = lastName;
+            Gender = gender;
             DateOfBirth = dateOfBirth.Date;
             ContactEmail = contactEmail;
             ContactNumber = contactNumber;
@@ -49,6 +51,7 @@ namespace SoftITO_Demo1.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName => $"{FirstName} {LastName}".Trim();
+        public bool Gender { get; set; }
         public string ContactEmail { get; set; }
         public string ContactNumber { get; set; }
         public DateTime DateOfBirth { get; set; }

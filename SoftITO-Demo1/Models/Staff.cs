@@ -6,12 +6,13 @@
         public Staff(
             string firstName, 
             string lastName, 
+            bool gender,
             DateTime dateOfBirth, 
             string contactEmail, 
             string contactNumber,
             Nation nation,
             Position position
-            ) : base(firstName, lastName, contactEmail, contactNumber, dateOfBirth)
+            ) : base(firstName, lastName, gender, contactEmail, contactNumber, dateOfBirth)
         {
             //Null Kontrolü
             if (position == null)

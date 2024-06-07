@@ -30,6 +30,7 @@ namespace SoftITO_Demo1.Models
             PublisherName = publisherName;
             ContactNumber = contactNumber;
             ContactEmail = contactEmail;
+            PublisherAddresses = new HashSet<PublisherAddress>();
         }
 
         //Model
@@ -42,6 +43,6 @@ namespace SoftITO_Demo1.Models
         public string ContactEmail { get; set; }
 
         //İlişkiler
-        public List<PublisherAddress> PublisherAddresses { get; set; } = [];
+        public HashSet<PublisherAddress> PublisherAddresses { get; set; }
     }
 }

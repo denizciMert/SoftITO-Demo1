@@ -18,7 +18,7 @@ namespace SoftITO_Demo1.Models
 
             //Veri Atamaları
             CategoryName = categoryName;
-            Books = new List<Book>();
+            Books = new HashSet<Book>();
         }
 
         //Model
@@ -29,6 +29,6 @@ namespace SoftITO_Demo1.Models
         public string CategoryName { get; set; }
 
         //İlişkiler
-        public List<Book> Books { get; set; }
+        public HashSet<Book> Books { get; set; }
     }
 }

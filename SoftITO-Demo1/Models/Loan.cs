@@ -26,6 +26,7 @@ namespace SoftITO_Demo1.Models
             Member = member;
             LoanDate = DateTime.Now;
             DueDate = ModelValidations.LoanValidator.Calculate(DateTime.Now,30);
+            Active = true;
         }
 
         //Model
@@ -36,14 +37,10 @@ namespace SoftITO_Demo1.Models
         public DateTime LoanDate { get; set; }
         public DateTime DueDate { get; set; }
         public DateTime? ReturnedDate { get; set; }
+        public bool Active { get; set; }
 
         //İlişkiler
-        [ForeignKey("Member")]
-        public int MemberId { get; set; }
         public Member Member { get; set; }
-        
-        [ForeignKey("Book")]
-        public int BookId { get; set; }
         public Book Book { get; set; }
     }
 }

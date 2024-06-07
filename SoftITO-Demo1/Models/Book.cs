@@ -9,14 +9,14 @@ namespace SoftITO_Demo1.Models
         public Book(
             string title, 
             string isbn, 
-            int pages, 
-            int copyCount, 
+            short pages, 
+            byte copyCount, 
             DateTime publishDate, 
             Language language,
-            List<Author> authors, 
-            List<Publisher> publishers, 
-            List<Category> categories, 
-            List<Shelf> shelves
+            HashSet<Author> authors, 
+            HashSet<Publisher> publishers, 
+            HashSet<Category> categories, 
+            HashSet<Shelf> shelves
             )
         {
             //Null Kontrolü
@@ -42,7 +42,8 @@ namespace SoftITO_Demo1.Models
             Isbn = isbn;
             Pages = pages;
             CopyCount = copyCount;
-            PublishDate = publishDate;
+            Active = true;
+            PublishDate = publishDate.Date.Year;
             Language = language ?? throw new ArgumentNullException(nameof(language), "Language cannot be null.");
             Authors = authors;
             Publishers = publishers;
@@ -57,15 +58,16 @@ namespace SoftITO_Demo1.Models
 
         public string Title { get; set; }
         public string Isbn { get; set; }
-        public int Pages { get; set; }
-        public int CopyCount { get; set; }
-        public DateTime PublishDate { get; set; }
+        public short Pages { get; set; }
+        public byte CopyCount { get; set; }
+        public bool Active { get; set; }
+        public int PublishDate { get; set; }
 
         //İlişkiler
-        public List<Author> Authors { get; set; }
-        public List<Publisher> Publishers { get; set; }
-        public List<Category> Categories { get; set; }
+        public HashSet<Author> Authors { get; set; }
+        public HashSet<Publisher> Publishers { get; set; }
+        public HashSet<Category> Categories { get; set; }
         public Language Language { get; set; }
-        public List<Shelf> Shelves { get; set; }
+        public HashSet<Shelf> Shelves { get; set; }
     }
 }

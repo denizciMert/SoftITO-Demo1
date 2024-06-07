@@ -18,6 +18,7 @@ namespace SoftITO_Demo1.Models
             
             //Veri Atamaları
             PositionName = positionName;
+            Staff = new HashSet<Staff>();
         }
 
         //Model
@@ -28,6 +29,6 @@ namespace SoftITO_Demo1.Models
         public string PositionName { get; set; }
 
         //İlişkiler
-        public List<Staff> Staff { get; set; } = [];
+        public HashSet<Staff> Staff { get; set; }
     }
 }

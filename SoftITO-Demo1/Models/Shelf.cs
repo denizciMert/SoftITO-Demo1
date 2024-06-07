@@ -24,7 +24,7 @@ namespace SoftITO_Demo1.Models
             //Veri Atamaları
             ShelfChar = shelfChar;
             ShelfNumber = shelfNumber;
-            Books = new List<Book>();
+            Books = new HashSet<Book>();
         }
 
         //Model
@@ -36,6 +36,6 @@ namespace SoftITO_Demo1.Models
         public string ShelfNumber { get; set; }
 
         //İlişkiler
-        public List<Book> Books { get; set; }
+        public HashSet<Book> Books { get; set; }
     }
 }

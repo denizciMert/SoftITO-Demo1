@@ -52,12 +52,7 @@ namespace SoftITO_Demo1.Models
         public DateTime IssuedDate { get; set; }
 
         //İlişkiler
-        [ForeignKey("Member")]
-        public int MemberId { get; set; }
         public Member Member { get; set; }
-
-        [ForeignKey("Book")]
-        public int BookId { get; set; }
         public Book Book { get; set; }
     }
 }

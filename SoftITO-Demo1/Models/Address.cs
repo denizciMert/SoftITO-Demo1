@@ -49,13 +49,16 @@ namespace SoftITO_Demo1.Models
             State = state;
             City = city;
             PostalCode = postalCode;
+            MemberAddresses = new HashSet<MemberAddress>();
+            PublisherAddresses = new HashSet<PublisherAddress>();
+            StaffAddresses = new HashSet<StaffAddress>();
         }
 
         //Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
+        //Çok fazla model oluşacağı için bu özellikleri ayrı modellerle birbirine baağlayarak adresleri oluşturmadım.
         public string Country { get; set; }
         public string? State { get; set; }
         public string? City { get; set; }
@@ -66,8 +69,8 @@ namespace SoftITO_Demo1.Models
         public string? PostalCode { get; set; }
 
         //İlişkiler
-        public List<MemberAddress> MemberAddresses { get; set; } = [];
-        public List<PublisherAddress> PublisherAddresses { get; set; } = [];
-        public List<StaffAddress> StaffAddresses { get; set; } = [];
+        public HashSet<MemberAddress> MemberAddresses { get; set; }
+        public HashSet<PublisherAddress> PublisherAddresses { get; set; }
+        public HashSet<StaffAddress> StaffAddresses { get; set; }
     }
 }

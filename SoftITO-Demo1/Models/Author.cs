@@ -9,7 +9,10 @@ namespace SoftITO_Demo1.Models
         public Author(
             string firstName, 
             string lastName, 
-            string nationality
+            Nation nation, 
+            string biography, 
+            DateTime dateOfBirth, 
+            DateTime? dateOfDeath
             )
         {
             //Null Kontrolü
@@ -21,16 +24,15 @@ namespace SoftITO_Demo1.Models
             {
                 throw new ArgumentNullException(nameof(lastName), "Last name cannot be null or empty.");
             }
-            if (string.IsNullOrWhiteSpace(nationality))
-            {
-                throw new ArgumentNullException(nameof(nationality), "Nationality cannot be null or empty.");
-            }
 
             //Veri Atamaları
             FirstName = firstName;
             LastName = lastName;
-            Nationality = nationality;
-            Books = new List<Book>();
+            Nation = nation;
+            Biography = biography;
+            DateOfBirth = dateOfBirth;
+            DateOfDeath = dateOfDeath;
+            Books = new HashSet<Book>();
         }
 
         //Model
@@ -40,9 +42,13 @@ namespace SoftITO_Demo1.Models
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Nationality { get; set; }
+        public string FullName => $"{FirstName} {LastName}".Trim();
+        public string Biography { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfDeath { get; set; }
 
         //İlişkiler
-        public List<Book> Books { get; set; }
+        public Nation Nation { get; set; }
+        public HashSet<Book> Books { get; set; }
     }
 }
